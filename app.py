@@ -59,4 +59,4 @@ with gr.Blocks() as demo:
 
     run_button.click(handle_run, inputs=[pdf_file, prompt_box], outputs=[table_output, csv_output])
 
-demo.launch()
+demo.launch(server_name="0.0.0.0", server_port=7860)

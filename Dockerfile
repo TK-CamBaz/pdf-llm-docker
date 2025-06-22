@@ -4,9 +4,12 @@ WORKDIR /app
 
 # System and Python dependencies
 RUN apt-get update && apt-get install -y \
-    libgl1-mesa-glx git && \
-    pip install --no-cache-dir \
-    gradio fitz PyMuPDF pandas llama-cpp-python huggingface_hub
+    build-essential \
+    cmake \
+    libgl1-mesa-glx \
+    git \
+    && pip install --no-cache-dir \
+    gradio fitz PyMuPDF pandas huggingface_hub llama-cpp-python
 
 COPY app.py download_models.py models.json ./
 

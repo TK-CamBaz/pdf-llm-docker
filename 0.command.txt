@@ -1,0 +1,11 @@
+1. Build Docker Image (default: Phi-2)
+docker build -t pdf-llm-ui .
+
+2. Launch the service
+docker run -it --rm -p 7860:7860
+
+2.1 Run with Optional Model (e.g., TinyLlama)
+docker run -it --rm -p 7860:7860 \
+  -e MODEL_NAME=tinyllama \
+  -e MODEL_FILE=TinyLlama-1.1B-Chat-v1.0.Q4_K_M.gguf \
+  taxonomy-ui
